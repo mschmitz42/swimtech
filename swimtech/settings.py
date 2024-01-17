@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
+import os
 
 from pathlib import Path
 
@@ -25,7 +26,10 @@ SECRET_KEY = 'django-insecure-p=zdumv!i*&2@qrf8y4s8rzd-$at@hklhahg2&v#=&8hj)-v+j
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'mschmitz42.pythonanywhere.com',
+    '127.0.0.1'
+]
 
 
 # Application definition
@@ -37,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'swimtech',
 ]
 
 MIDDLEWARE = [
@@ -70,6 +75,16 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'swimtech.wsgi.application'
 
+# DEFAULT_FROM_EMAIL = "webmaster@derek-haff-fitness.com"
+# EMAIL_HOST = "smtppro.zoho.com"
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = "webmaster@derek-haff-fitness.com"
+# EMAIL_HOST_PASSWORD = "Ayf68Fgr_7CxTcaTzGMktiCL7sjFrgk"
+# EMAIL_USE_TLS = True
+
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
@@ -116,7 +131,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 STATIC_URL = 'static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'assets'),
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
