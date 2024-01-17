@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-p=zdumv!i*&2@qrf8y4s8rzd-$at@hklhahg2&v#=&8hj)-v+j
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'mschmitz42.pythonanywhere.com',
+    'www.swimtechsolutions.com',
     '127.0.0.1'
 ]
 
