@@ -93,7 +93,8 @@ section {
 --------------------------------------------------------------*/
 .about {
 
-  background: url("../img/about-bg.jpg") center center no-repeat;
+  //background: url("../img/about-bg.jpg") center center no-repeat;
+  background: linear-gradient(rgba($primary, .9), rgba($primary, .2)), url("../img/about-bg.jpg") center center;
   background-size: cover;
   padding: 60px 0;
   position: relative;
