@@ -21,6 +21,8 @@ from swimtech import views
 app_name = 'swimtech'
 
 urlpatterns = [
+    path('accounts/', include("django.contrib.auth.urls")),
     path('', views.swimtech_index, name='swimtech_index'),
+    path('dashboard/', views.dashboard, name='dashboard'),
     path('admin/', admin.site.urls),
 ]

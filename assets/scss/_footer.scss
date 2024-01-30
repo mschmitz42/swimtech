@@ -1,8 +1,11 @@
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
+
+@use 'sass:color';
+
 #footer {
-  background: darken($secondary, 5);
+  background: color.scale($primary, $lightness: 30%);
   padding: 0 0 30px 0;
   color: $white;
   font-size: 14px;
